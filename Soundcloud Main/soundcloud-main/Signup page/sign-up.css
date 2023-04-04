@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+.soundcloud-image{
+    position: absolute;
+    margin-top: 0;
+    margin-right: 0;
+    top: 0px;
+    margin-left: -165px;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+}
+.soundcloud-icon{
+    position: absolute;
+    top: -5em;
+    left: 7em;
+}
+.user-input .sign-up-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-content .sign-up-form{
+    width: calc(100%/ 2-25px);
+}
+#sign-up{
+    margin-top: -2em;
+}
+form .form-content .title{
+    position: relative;
+    left: 41rem;
+    top: 2em;
+    
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 48px;
+    text-align: center;
+}
+form .form-content .title:before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 1em;
+    background: #E96C00;
+}
+form .form-control input{
+    position: relative;
+    height: 50px;
+    width: 450px;
+
+    display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: left;
+
+    outline: none;
+    border: none;
+
+    margin-top: 2em;
+    padding-left: 1em;
+
+    top: 5em;
+    left: 39em;
+
+    font-size: 16px;
+    font-weight: 300;
+    
+    background: #FFFEFE;
+    border: 2px solid #000000;
+    border-radius: 30px;
+}
+.form-control small{
+    position: relative;
+    color: red;
+    display: block;
+    margin-left: 40rem;
+    top: 6em;
+    max-width: 30em;
+}
+.form-control input::placeholder{
+    text-align: left;
+    justify-content: center;
+}
+.form-content .form-control input:focus{
+    border-color: #ef6c00;
+}
+.form-content .form-control.success input{
+    border-color: rgb(17, 225, 17);
+}
+.form-content .form-control.error input{
+    border-color: red;
+}
+form .form-content .button-checkbox{
+    display: block;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin-top: 6em;
+    margin-left: 36.3em;
+}
+form .form-content .button-checkbox label{
+    display: inline-block;
+    padding-left: 1em;
+    text-align: center;
+    font-weight: 600;
+}
+form .form-content .button-checkbox input{
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+mark.specific-text{
+    text-decoration: underline;
+    color: #E96C00;
+    background: none;
+}
+form .form-content .button-form-control input{
+    color: #fff;
+    background: #E96C00;
+    font-size: 16px;
+    width: 535px;
+    height: 55px;
+    margin-top: 2em;
+    margin-left: 36.7rem;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    outline-color: none;
+}
+.form-content .sign-up-different-accounts p{
+    padding-top: 1.5em;
+    padding-left: 44em;
+}
+.social-accounts{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    min-height: 50px;
+
+    padding-top: 1em;
+    padding-left: 37em;
+}
+.login-switch{
+    margin-left: 2.5em;
+}
+.login-switch label, a{
+    background: none;
+    text-decoration: underline;
+    font-weight: 700;
+    color: #000000;
+}
+.login-switch label, a:hover{
+    color: #ef6c00;
+}
+

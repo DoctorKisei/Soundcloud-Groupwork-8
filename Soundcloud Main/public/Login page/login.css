@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+.soundcloud-image{
+    position: static;
+    margin-top: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px 0 0 30px;
+}
+.soundcloud-icon{
+    position: absolute;
+    left: 300px;
+    top: -90px;
+}
+.user-input{
+    max-width: 850px;
+    width: 100%;
+    background: white;
+    margin-left: 100px;
+}
+.user-input .login-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-content .login-form{
+    width: calc(100%/ 2-25px);
+}
+form .form-content .title{
+    position: relative;
+    left: 5em;
+    top: -1em;
+    
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 48px;
+    text-align: center;
+}
+form .form-content .title:before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 1em;
+    background: #E96C00;
+}
+form .container{
+    margin-top: -30px;
+    padding: 4em;
+    padding-left: 2em;
+    margin-left: -2em;
+}
+.form-control{
+    position: relative;
+}
+form .form-control input{
+    position: relative;
+    height: 50px;
+    width: 58%;
+    align-items: center;
+    justify-items: center;
+    
+    outline: none;
+    
+    margin-top: 20px;
+    margin-left: 8em;
+    margin-bottom: 10px;
+
+    padding-left: 1em;
+
+    color: #5D5C5F;
+    font-size: 16px;
+    font-weight: 300;
+    
+    border: 2px solid #DC3E01;
+    border-radius: 4px;
+}
+.form-control label{
+    position: absolute;
+    z-index: 1;
+    left: 10.4em;
+    top: 9px;
+    background-color: white;
+
+    color: #49454F;
+    font-size: 14px;
+    font-weight: lighter;
+}
+form .form-content .form-control i{
+    position: absolute;
+}
+.form-content .form-control input:focus{
+    border-color: #ef6c00;
+}
+.form-content .form-control.success input{
+    border-color: green;
+}
+.form-content .form-control.error input{
+    border-color: red;
+}
+.form-control small{
+    display: block;
+    color: red;
+    height: 100%;
+    width: 65%;
+    margin-left: 9.7em;
+    visibility: hidden;
+}
+.form-control.error small{
+    visibility: visible;
+}
+form .form-content .button-form-control input{
+    color: #fff;
+    background: #E96C00;
+    font-size: 16px;
+    width: 535px;
+    height: 55px;
+    margin-top: 5em;
+    margin-left: 5em;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    outline-color: none;
+}
+form .form-content .button-form-control input:hover{
+    background: #FF7904;
+}
+form .form-content .button-checkbox{
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 100%;
+    margin-top: -12em;
+    margin-left: 7rem;
+}
+form .form-content .button-checkbox input{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+form .form-content .button-checkbox label{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 24px;
+    padding: inherit;
+    align-items: center;
+    justify-content: center;
+}
+#email{
+    background-image: url(user-solid.svg);
+    background-repeat: no-repeat;
+    background-position: 26rem;
+    background-size: 30px 30px;
+}
+#password{
+    background-image: url(key-solid.svg);
+    background-repeat: no-repeat;
+    background-position: 26rem;
+    background-size: 30px 30px;
+}
+form .form-content .forgot-password a{
+    display: block;
+    color: #DD5000;
+    text-decoration: none;
+    margin-left: 26em;
+    margin-top: -8em;
+    height: 100%;
+    width: 550px;
+}
+form .form-content .forgot-password a:hover{
+    text-decoration: underline;
+}
+form .form-content .switch-text{
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 40%;
+    padding: 0;
+    margin-top: 5em;
+    margin-left: 13em;
+}
+form .form-content .switch-text label, a{
+    text-decoration: underline;
+    font-weight: 900;
+    color: black;
+}
+form .form-content .switch-text label, a:hover{
+    color: #E96C00;
+}
+
+
+

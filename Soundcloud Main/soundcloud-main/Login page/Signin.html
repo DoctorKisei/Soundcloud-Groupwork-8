@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Soundcloud Sign In</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="icon" href="./src/soundcloud-1@2x.png"/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="user-input">
+        <form action="#" id="login">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Welcome back</div>
+                </div>
+            <div class="container">
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Your email" required>
+                    <small></small>
+                </div>
+                <div class="form-control">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Your password" required>
+                    <small></small>
+                </div>
+                <div class="button-form-control">
+                     <input type="submit" id="btn-login" value="Submit">
+                  
+                </div>
+                <div class="forgot-password">
+                    <a href="#" title="Forgot Password" id="link-reset">Forgot Password?</a>
+                </div>
+            </div>
+                <div class="switch-text">
+                    Don't have an account?
+                    <label for="">
+                        <a href="/soundcloud-main/Signup page/sign-up.html">Sign Up</a>
+                    </label>
+                </div>
+                <div class="button-checkbox">
+                    <input type="checkbox" id="checkbox" name="checkbox-remember" />
+                    <label for="checkbox">Remember me</label>
+                </div>
+                <button
+                    type ="button"
+                    id = "button-signup"
+                    class = "button-default-signup"></button>
+                </div>
+        </form>
+      </div>
+      <div class="main-screen">
+          <img
+               class = "soundcloud-image"
+               src = "jon-tyson-zoG585VYsV8-unsplash.jpg"
+          />
+          <img
+               class = "soundcloud-icon"
+               src = "soundcloud%201.svg"
+            />
+      </div>
+    <script>
+      const emailEle = document.querySelector('#email');
+      const passwordEle = document.querySelector('#password');
+
+      const form = document.querySelector('#login');
+
+const checkEmail = () => {
+    let valid = false;
+    const email = emailEle.value.trim();
+    if(!isRequired(email)) {
+        showError(emailEle, 'Email cannot be blank.');
+    } else if (!isEmailValid(email)) {
+        showError(emailEle, 'Email is not valid');
+    } else {
+        showSuccess(emailEle);
+        valid = true;
+    }
+    return valid;
+}
+const checkPassword = () => {
+    let valid = false;
+    const password = passwordEle.value.trim();
+    if(!isRequired(password)) {
+        showError(passwordEle, 'Password cannot be blank.');
+    } else if (!isPasswordSecure(password)) {
+        showError(passwordEle, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+    } else {
+        showSuccess(passwordEle);
+        valid = true;
+    }
+    return valid;
+}
+const isEmailValid = (email) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+const isPasswordSecure = (password) => {
+    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    return re.test(password);
+}
+const isRequired = value => value === '' ? false : true;
+const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+const showError = (input, message) => {
+    const formField = input.parentElement;
+
+    formField.classList.remove('success');
+    formField.classList.add('error');
+
+    const error = formField.querySelector('small');
+    error.textContent = message;
+}
+
+const showSuccess = (input) => {
+    const formField = input.parentElement;
+
+    formField.classList.remove('error');
+    formField.classList.add('success');
+
+    const error = formField.querySelector('small');
+    error.textContent = '';
+}
+form.addEventListener('submit', function (e) {
+    //chặn submit form trong trường hợp xảy ra lỗi
+    e.preventDefault();
+
+    let isEmailValid = checkEmail(),
+        isPasswordValid = checkPassword();
+
+    let isFormValid = isEmailValid &&
+        isPasswordValid;
+    if (isFormValid) {
+
+    }
+});
+form.addEventListener('input', function(e) {
+    switch (e.target.id) {
+        case 'email':
+            checkEmail();
+            break;
+        case 'password':
+            checkPassword();
+            break;
+    }
+});
+document.getElementById("btn-login").addEventListener("click", function() {
+  window.location.href = "/index.html";
+});
+      </script>
+  </body>
+</html>
