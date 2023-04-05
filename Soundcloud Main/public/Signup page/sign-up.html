@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
     />
-    <script src="/public/firebase-sign-up.js"></script> 
+    
   </head>
   <body>
     <div class="user-input">
@@ -194,6 +194,60 @@ form.addEventListener('input', function(e) {
             break;
     }
 });
+    </script>
+    <script type="module">
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPZscI4txP-29JlN9Z6P-QT7cN8iVRF-g",
+    authDomain: "soundcloud-group-8-62a70.firebaseapp.com",
+    databaseURL: "https://soundcloud-group-8-62a70-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "soundcloud-group-8-62a70",
+    storageBucket: "soundcloud-group-8-62a70.appspot.com",
+    messagingSenderId: "127931986621",
+    appId: "1:127931986621:web:c83b20e5933358eedafdd4",
+    measurementId: "G-KLCR8HER51"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth(app);
+  const signUp = document.querySelector('#sign-up');
+
+  signUp.addEventListener('submit', (e) => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        //Signed up
+        const user = userCredential.user;
+
+        set(ref(database, 'users/'+ user.uid),{
+          username: username,
+          email: email,
+          password: password
+        })
+        alert('User created!');
+        })
+        alert("User Created")
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+        });
+    });
+
     </script>
   </body>
 </html>

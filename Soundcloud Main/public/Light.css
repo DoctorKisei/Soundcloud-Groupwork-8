@@ -741,8 +741,8 @@
   top: calc(50% + 29.5px);
   left: calc(50% + 10.22px);
   border-radius: var(--br-7xs);
-  width: 125.55px;
-  height: 37.54px;
+  width: 45%;
+  height: 30%;
   object-fit: cover;
 }
 .app-store-icon2,
@@ -753,8 +753,8 @@
 .app-store-icon2 {
   top: calc(50% + 29.96px);
   border-radius: var(--br-7xs);
-  width: 125.55px;
-  height: 37.54px;
+  width: 45%;
+  height: 30%;
   object-fit: cover;
 }
 .go-mobile4 {
@@ -1080,6 +1080,11 @@
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-inter);
+}
+@media screen and (max-width: 1000px) {
+  .right1 {
+    display: none;
+  }
 }
 
 
