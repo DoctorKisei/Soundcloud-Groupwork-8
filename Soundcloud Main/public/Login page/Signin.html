@@ -200,11 +200,11 @@ document.getElementById("btn-login").addEventListener("click", function() {
           .then((userCredential) => {
               //Signed in
               const user = userCredential.user;
-      
-              set(ref(database, 'users/' + user.uid),{
-                  email: email,
-                  password: password
-              })
+
+              const dt = new Date();
+              update(ref(database, 'users/') + user.uid),{
+                last_login: dt,
+              }
               alert("User Signed In")
               .catch((error) => {
                   const errorCode = error.code;

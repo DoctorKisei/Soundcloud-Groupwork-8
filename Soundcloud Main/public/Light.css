@@ -1085,6 +1085,13 @@
   .right1 {
     display: none;
   }
+  body{
+    width: 100%;
+  }
+  header{
+    width: 100%;
+  }
 }
+
 
 
